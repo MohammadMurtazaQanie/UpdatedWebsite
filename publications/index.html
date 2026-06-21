@@ -41,13 +41,15 @@
       try {
         if (localStorage.getItem("yahyaqanie.homeTheme") === "dark") {
           document.documentElement.classList.add("site-dark-pending");
+          document.documentElement.style.setProperty("--loader-bg", "#111113");
+          document.documentElement.style.setProperty("--loader-text", "rgba(231, 228, 222, 0.85)");
         }
       } catch (error) {}
     </script>
-    <link rel="stylesheet" href="../styles.css?v=302">
+    <link rel="stylesheet" href="../styles.css?v=303">
   </head>
   <body class="writings-page">
-    <div class="page-loader" aria-hidden="true" style="position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;background:#f2f2f2"><span class="page-loader-text" style="color:#171719;font-size:14px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;opacity:0.55">Loading</span></div>
+    <div class="page-loader" aria-hidden="true" style="position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;background:var(--loader-bg,#f2f2f2)"><span class="page-loader-text" style="color:var(--loader-text,#171719);font-size:14px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;opacity:0.55">Loading</span></div>
     <script>
       try {
         if (localStorage.getItem("yahyaqanie.homeTheme") === "dark") {
@@ -174,7 +176,7 @@
               <p class="writing-summary">Between 2022 and early 2026, the world witnessed roughly 650 major protests, with Gen Z movements at the forefront — toppling five heads of state and reshaping public discourse from Nepal to Senegal, Sri Lanka to Serbia. Yet behind the visibility lies a paradox: movements optimized for mobilization rarely translate into lasting policy change. This multipronged study by Search for Common Ground unpacks that paradox. Drawing on a curated scan of 400+ sources, 32 in-depth interviews across 10 countries, deliberative conversations with 54 young people from 22 countries, and analysis of over half a million global protest datapoints, the report maps the architecture, drivers, risks, and impact of contemporary youth-led movements. The findings reveal a generation that is leaderful rather than leaderless, digitally native, intentionally non-partisan, and motivated less by ideology than by demands for dignity, accountability, and a livable future. The report also exposes the structural barriers — physical, digital, legal, and psychological — that constrain their influence. Anchored in the Youth, Peace &amp; Security (YPS) agenda, the study offers a governance architecture for translating youth mobilization into sustained policy influence, with concrete recommendations for movements, governments, and the international community.</p>
               <div class="writing-actions">
                 <a href="https://cnxus.org/resource/building-the-alternative/" target="_blank" rel="noopener noreferrer">Read now <span class="home-link-arrow" aria-hidden="true"></span></a>
-                <a href="https://cnxus.org/resource/building-the-alternative/" target="_blank" rel="noopener noreferrer">Download PDF <span class="download-icon" aria-hidden="true"></span></a>
+                <a href="../assets/pdfs/building-the-alternative.pdf" download="Building the Alternative - Yahya Qanie.pdf">Download PDF <span class="download-icon" aria-hidden="true"></span></a>
               </div>
             </div>
           </article>
@@ -385,6 +387,6 @@
       </div>
     </section>
 
-    <script src="../script.js?v=20"></script>
+    <script src="../script.js?v=21"></script>
   </body>
 </html>

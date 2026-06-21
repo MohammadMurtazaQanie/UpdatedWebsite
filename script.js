@@ -470,6 +470,27 @@ if (writingsPage) {
 
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+const tryPlayVideo = (video) => {
+  if (!video || !video.paused) return;
+  video.muted = true;
+  video.setAttribute("muted", "");
+  const attempt = video.play();
+  if (attempt && typeof attempt.catch === "function") {
+    attempt.catch(() => {});
+  }
+};
+
+const autoplayVideos = document.querySelectorAll("video[autoplay]");
+autoplayVideos.forEach((video) => {
+  video.muted = true;
+  video.setAttribute("muted", "");
+  if (video.readyState >= 2) {
+    tryPlayVideo(video);
+  }
+  video.addEventListener("loadeddata", () => tryPlayVideo(video));
+  video.addEventListener("canplay", () => tryPlayVideo(video));
+});
+
 const pageLoader = document.querySelector(".page-loader");
 const minLoaderTime = 600;
 const loaderStart = performance.now();
@@ -477,6 +498,7 @@ const loaderStart = performance.now();
 const hidePageLoader = () => {
   if (!pageLoader) {
     document.body.classList.add("is-loaded");
+    autoplayVideos.forEach(tryPlayVideo);
     return;
   }
   const elapsed = performance.now() - loaderStart;
@@ -484,16 +506,10 @@ const hidePageLoader = () => {
   setTimeout(() => {
     pageLoader.classList.add("is-hidden");
     document.body.classList.add("is-loaded");
+    autoplayVideos.forEach(tryPlayVideo);
     setTimeout(() => {
       pageLoader.remove();
-      document.querySelectorAll("video[autoplay]").forEach((video) => {
-        if (video.paused) {
-          const playAttempt = video.play();
-          if (playAttempt && typeof playAttempt.catch === "function") {
-            playAttempt.catch(() => {});
-          }
-        }
-      });
+      autoplayVideos.forEach(tryPlayVideo);
     }, 750);
   }, wait);
 };
