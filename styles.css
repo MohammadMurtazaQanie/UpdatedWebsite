@@ -3899,9 +3899,16 @@ body.site-dark:not(.home-page) .theme-toggle span::after {
 .una-summary h1,
 .una-summary p {
   margin: 0;
-  color: #222329;
   font-size: 14px;
   line-height: 1.32;
+}
+
+.una-summary h1 {
+  color: #222329;
+}
+
+.una-summary p {
+  color: #66686f;
 }
 
 .una-page.site-dark .una-summary h1,
