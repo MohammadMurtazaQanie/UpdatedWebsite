@@ -2357,13 +2357,13 @@ body.site-dark:not(.home-page) .theme-toggle span::after {
 
 .connect-page .nav {
   top: 28px;
-  color: rgba(34, 34, 38, 0.62);
+  color: #000;
   transform: translateX(145px);
 }
 
 .connect-page .nav a:hover,
 .connect-page .nav a[aria-current="page"] {
-  color: rgba(18, 18, 20, 0.72);
+  color: #000;
 }
 
 .connect-page .nav.is-scrolled {
@@ -2621,13 +2621,13 @@ body.site-dark:not(.home-page) .theme-toggle span::after {
 
 .writings-page .nav {
   top: 28px;
-  color: rgba(34, 34, 38, 0.62);
+  color: #000;
   transform: translateX(145px);
 }
 
 .writings-page .nav a:hover,
 .writings-page .nav a[aria-current="page"] {
-  color: rgba(18, 18, 20, 0.72);
+  color: #000;
 }
 
 .writings-page .nav.is-scrolled {
@@ -3814,13 +3814,13 @@ body.site-dark:not(.home-page) .theme-toggle span::after {
 
 .una-page .nav {
   top: 28px;
-  color: rgba(34, 34, 38, 0.62);
+  color: #000;
   transform: translateX(145px);
 }
 
 .una-page .nav a:hover,
 .una-page .nav a[aria-current="page"] {
-  color: rgba(18, 18, 20, 0.72);
+  color: #000;
 }
 
 .una-page .nav.is-scrolled {
@@ -7479,7 +7479,7 @@ body.is-leaving {
 .connect-page .nav a[aria-current="page"],
 .writings-page .nav a:hover,
 .writings-page .nav a[aria-current="page"] {
-  color: rgba(18, 18, 20, 0.95);
+  color: #000;
 }
 
 .una-page .nav.is-scrolled a:hover,
