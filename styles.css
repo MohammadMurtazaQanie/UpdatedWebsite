@@ -7368,7 +7368,7 @@ html {
   background: var(--page-bg);
   opacity: 1;
   pointer-events: all;
-  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: opacity 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .page-loader.is-hidden {
@@ -7401,7 +7401,7 @@ body.site-dark .page-loader-text {
 }
 
 body.is-loaded main {
-  animation: page-enter 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: page-enter 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 @keyframes page-enter {
@@ -7411,10 +7411,9 @@ body.is-loaded main {
 
 .reveal {
   opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
-              transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
-  will-change: opacity, transform;
+  transform: translateY(20px);
+  transition: opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .reveal.is-visible {
@@ -7423,24 +7422,24 @@ body.is-loaded main {
 }
 
 .connect-hero.reveal {
-  transform: translate(-50%, calc(-37% + 28px));
+  transform: translate(-50%, calc(-37% + 20px));
 }
 
 .connect-hero.reveal.is-visible {
   transform: translate(-50%, -37%);
 }
 
-.reveal[data-reveal-delay="1"] { transition-delay: 0.08s; }
-.reveal[data-reveal-delay="2"] { transition-delay: 0.16s; }
-.reveal[data-reveal-delay="3"] { transition-delay: 0.24s; }
-.reveal[data-reveal-delay="4"] { transition-delay: 0.32s; }
-.reveal[data-reveal-delay="5"] { transition-delay: 0.4s; }
+.reveal[data-reveal-delay="1"] { transition-delay: 0.05s; }
+.reveal[data-reveal-delay="2"] { transition-delay: 0.1s; }
+.reveal[data-reveal-delay="3"] { transition-delay: 0.15s; }
+.reveal[data-reveal-delay="4"] { transition-delay: 0.2s; }
+.reveal[data-reveal-delay="5"] { transition-delay: 0.25s; }
 
 body.is-leaving {
   opacity: 0;
-  transform: translateY(-8px);
-  transition: opacity 0.45s cubic-bezier(0.4, 0, 1, 1),
-              transform 0.45s cubic-bezier(0.4, 0, 1, 1);
+  transform: translateY(-6px);
+  transition: opacity 0.25s cubic-bezier(0.4, 0, 1, 1),
+              transform 0.25s cubic-bezier(0.4, 0, 1, 1);
 }
 
 .una-page .nav,
@@ -7454,7 +7453,7 @@ body.is-leaving {
   box-shadow: 0 18px 60px rgba(0, 0, 0, 0);
   backdrop-filter: blur(0) saturate(1);
   -webkit-backdrop-filter: blur(0) saturate(1);
-  color: rgba(34, 34, 38, 0.7);
+  color: #000;
   border-radius: 24px;
 }
 

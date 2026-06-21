@@ -492,7 +492,7 @@ autoplayVideos.forEach((video) => {
 });
 
 const pageLoader = document.querySelector(".page-loader");
-const minLoaderTime = 600;
+const minLoaderTime = 150;
 const loaderStart = performance.now();
 
 const hidePageLoader = () => {
@@ -510,15 +510,15 @@ const hidePageLoader = () => {
     setTimeout(() => {
       pageLoader.remove();
       autoplayVideos.forEach(tryPlayVideo);
-    }, 750);
+    }, 400);
   }, wait);
 };
 
 if (document.readyState === "complete") {
   hidePageLoader();
 } else {
-  window.addEventListener("load", hidePageLoader);
-  setTimeout(hidePageLoader, 6000);
+  window.addEventListener("DOMContentLoaded", hidePageLoader);
+  setTimeout(hidePageLoader, 4000);
 }
 
 const revealSelectors = [
@@ -608,7 +608,7 @@ if (!prefersReducedMotion) {
     if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
     event.preventDefault();
     document.body.classList.add("is-leaving");
-    setTimeout(() => { window.location.href = href; }, 380);
+    setTimeout(() => { window.location.href = href; }, 220);
   });
 
   window.addEventListener("pageshow", (event) => {

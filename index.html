@@ -46,10 +46,10 @@
       }
     } catch (error) {}
   </script>
-  <link rel="stylesheet" href="styles.css?v=303">
+  <link rel="stylesheet" href="styles.css?v=310">
   </head>
   <body class="home-page">
-    <div class="page-loader" aria-hidden="true" style="position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;background:var(--loader-bg,#f2f2f2)"><span class="page-loader-text" style="color:var(--loader-text,#171719);font-size:14px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;opacity:0.55">Loading</span></div>
+    <div class="page-loader" aria-hidden="true" style="position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;background:var(--loader-bg,#f2f2f2)"></div>
     <script>
       try {
         if (localStorage.getItem("yahyaqanie.homeTheme") === "dark") {
@@ -98,7 +98,7 @@
 
     <main class="home-main" aria-label="Home">
       <section class="home-portrait-panel" aria-label="Portrait">
-        <img src="assets/home/main-page-crop-left.jpg" alt="Yahya Qanie in a library">
+        <img fetchpriority="high" decoding="async" src="assets/home/main-page-crop-left.jpg" alt="Yahya Qanie in a library">
       </section>
 
       <section class="home-content" aria-label="Introduction">
@@ -113,22 +113,22 @@
           </div>
           <div class="home-logo-strip" aria-label="Featured logos">
             <a href="https://www.independent.co.uk/independentpremium/long-reads/young-afghanistan-fighting-taliban-peace-process-b1760331.html" target="_blank" rel="noopener noreferrer" aria-label="Read The Independent feature">
-              <img class="home-logo-independent" src="assets/home/independent-blk.png" alt="The Independent">
+              <img decoding="async" loading="lazy" class="home-logo-independent" src="assets/home/independent-blk.png" alt="The Independent">
             </a>
             <a href="https://www.oneyoungworld.com/blog/afghan-youth-reclaiming-their-voice-and-reimagining-better-future" target="_blank" rel="noopener noreferrer" aria-label="Read One Young World article">
-              <img class="home-logo-oyw" src="assets/home/oyw-blk.png" alt="One Young World">
+              <img decoding="async" loading="lazy" class="home-logo-oyw" src="assets/home/oyw-blk.png" alt="One Young World">
             </a>
             <a href="https://webtv.un.org/en/asset/k1l/k1lov8j7h8" target="_blank" rel="noopener noreferrer" aria-label="Watch United Nations video">
-              <img class="home-logo-un" src="assets/home/un-blk.png" alt="United Nations">
+              <img decoding="async" loading="lazy" class="home-logo-un" src="assets/home/un-blk.png" alt="United Nations">
             </a>
             <a href="profile#media" aria-label="View BBC mention in media section">
-              <img class="home-logo-bbc" src="assets/home/bbc-blk.png" alt="BBC">
+              <img decoding="async" loading="lazy" class="home-logo-bbc" src="assets/home/bbc-blk.png" alt="BBC">
             </a>
             <a href="https://www.facebook.com/watch/?v=319614488630998" target="_blank" rel="noopener noreferrer" aria-label="Watch Voice of America segment">
-              <img class="home-logo-voa" src="assets/home/voa-blk.png" alt="Voice of America">
+              <img decoding="async" loading="lazy" class="home-logo-voa" src="assets/home/voa-blk.png" alt="Voice of America">
             </a>
             <a href="https://mofa.gov.qa/en/latest-articles/prime-minister-speeches/opening-speech-of-he-prime-minister-and-minister-of-foreign-affairs--at-the-high-level-global-conference-on-youth-inclusive-peace-processes" target="_blank" rel="noopener noreferrer" aria-label="Read Qatar Ministry of Foreign Affairs speech">
-              <img class="home-logo-qatar" src="assets/home/qatar-blk.png" alt="Ministry of Foreign Affairs, Qatar">
+              <img decoding="async" loading="lazy" class="home-logo-qatar" src="assets/home/qatar-blk.png" alt="Ministry of Foreign Affairs, Qatar">
             </a>
             <a class="home-view-all" href="profile#media">View all <span class="home-link-arrow" aria-hidden="true"></span></a>
           </div>
@@ -136,7 +136,7 @@
 
         <section class="home-card-grid" aria-label="Areas of work">
           <article class="home-card">
-            <img src="assets/home/banner-4.jpg" alt="">
+            <img decoding="async" loading="lazy" src="assets/home/banner-4.jpg" alt="">
             <div>
               <h3>AI Civic Technology</h3>
               <p>Public-interest technology for trust, participation, and accountability.</p>
@@ -144,7 +144,7 @@
             </div>
           </article>
           <article class="home-card">
-            <img src="assets/home/banner-1.jpg" alt="">
+            <img decoding="async" loading="lazy" src="assets/home/banner-1.jpg" alt="">
             <div>
               <h3>Entrepreneurship</h3>
               <p>Mission-driven institutions and platforms built to solve civic and social challenges.</p>
@@ -152,7 +152,7 @@
             </div>
           </article>
           <article class="home-card">
-            <img src="assets/home/banner-3.jpg" alt="">
+            <img decoding="async" loading="lazy" src="assets/home/banner-3.jpg" alt="">
             <div>
               <h3>Policy Advocacy</h3>
               <p>Connecting evidence-based findings, strategy, and action for policy change.</p>
@@ -160,7 +160,7 @@
             </div>
           </article>
           <article class="home-card">
-            <img src="assets/home/banner-2.jpg" alt="">
+            <img decoding="async" loading="lazy" src="assets/home/banner-2.jpg" alt="">
             <div>
               <h3>Ideas &amp; Analysis</h3>
               <p>Writing, research, and analysis on governance, peace, and democratic futures.</p>
@@ -187,6 +187,6 @@
       </div>
     </section>
 
-    <script src="script.js?v=21"></script>
+    <script src="script.js?v=22"></script>
   </body>
 </html>
