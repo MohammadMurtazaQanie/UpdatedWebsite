@@ -7401,7 +7401,7 @@ body.site-dark .page-loader-text {
 }
 
 body.is-loaded main {
-  animation: page-enter 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: page-enter 0.3s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 @keyframes page-enter {
@@ -7412,8 +7412,8 @@ body.is-loaded main {
 .reveal {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1),
-              transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: opacity 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .reveal.is-visible {
@@ -7532,31 +7532,3 @@ body.is-leaving {
   body.is-leaving { opacity: 1 !important; transform: none !important; }
 }
 
-/* ============================================================
-   ANIMATIONS DISABLED (testing)
-   To re-enable animations, remove or comment out this entire block.
-   ============================================================ */
-.page-loader { display: none !important; }
-body.is-loaded main,
-main {
-  animation: none !important;
-  opacity: 1 !important;
-  transform: none !important;
-}
-.reveal {
-  opacity: 1 !important;
-  transform: none !important;
-  transition: none !important;
-}
-.connect-hero.reveal,
-.connect-hero.reveal.is-visible {
-  transform: translate(-50%, -37%) !important;
-}
-body.is-leaving {
-  opacity: 1 !important;
-  transform: none !important;
-  transition: none !important;
-}
-/* ============================================================
-   END animations-disabled block
-   ============================================================ */
