@@ -7531,3 +7531,32 @@ body.is-leaving {
   .reveal { opacity: 1 !important; transform: none !important; }
   body.is-leaving { opacity: 1 !important; transform: none !important; }
 }
+
+/* ============================================================
+   ANIMATIONS DISABLED (testing)
+   To re-enable animations, remove or comment out this entire block.
+   ============================================================ */
+.page-loader { display: none !important; }
+body.is-loaded main,
+main {
+  animation: none !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+.reveal {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
+.connect-hero.reveal,
+.connect-hero.reveal.is-visible {
+  transform: translate(-50%, -37%) !important;
+}
+body.is-leaving {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
+/* ============================================================
+   END animations-disabled block
+   ============================================================ */
