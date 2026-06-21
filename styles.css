@@ -7505,6 +7505,16 @@ body.is-leaving {
   color: rgba(245, 242, 235, 0.82);
 }
 
+/* Initiative nav sits over the dark portrait until the page is scrolled. */
+.una-page .nav:not(.is-scrolled) {
+  color: rgba(245, 242, 235, 0.72);
+}
+
+.una-page .nav:not(.is-scrolled) a:hover,
+.una-page .nav:not(.is-scrolled) a[aria-current="page"] {
+  color: rgba(255, 255, 255, 0.95);
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .page-loader-text,
