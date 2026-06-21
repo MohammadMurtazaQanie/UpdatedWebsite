@@ -7504,14 +7504,19 @@ body.is-leaving {
   color: rgba(245, 242, 235, 0.82);
 }
 
-/* Initiative nav sits over the dark portrait until the page is scrolled. */
-.una-page .nav:not(.is-scrolled) {
-  color: rgba(245, 242, 235, 0.72);
+.una-page .nav:not(.is-scrolled),
+.connect-page .nav:not(.is-scrolled),
+.writings-page .nav:not(.is-scrolled) {
+  color: #000;
 }
 
 .una-page .nav:not(.is-scrolled) a:hover,
-.una-page .nav:not(.is-scrolled) a[aria-current="page"] {
-  color: rgba(255, 255, 255, 0.95);
+.una-page .nav:not(.is-scrolled) a[aria-current="page"],
+.connect-page .nav:not(.is-scrolled) a:hover,
+.connect-page .nav:not(.is-scrolled) a[aria-current="page"],
+.writings-page .nav:not(.is-scrolled) a:hover,
+.writings-page .nav:not(.is-scrolled) a[aria-current="page"] {
+  color: #000;
 }
 
 @media (prefers-reduced-motion: reduce) {
