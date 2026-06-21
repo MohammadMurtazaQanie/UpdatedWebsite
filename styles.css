@@ -7519,6 +7519,22 @@ body.is-leaving {
   color: #000;
 }
 
+/* Pages with dark portrait on the right need a white nav until scrolled. */
+.kabulmun-page .nav:not(.is-scrolled),
+.nycp-page .nav:not(.is-scrolled),
+.yps-page .nav:not(.is-scrolled) {
+  color: #fff;
+}
+
+.kabulmun-page .nav:not(.is-scrolled) a:hover,
+.kabulmun-page .nav:not(.is-scrolled) a[aria-current="page"],
+.nycp-page .nav:not(.is-scrolled) a:hover,
+.nycp-page .nav:not(.is-scrolled) a[aria-current="page"],
+.yps-page .nav:not(.is-scrolled) a:hover,
+.yps-page .nav:not(.is-scrolled) a[aria-current="page"] {
+  color: #fff;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .page-loader-text,
