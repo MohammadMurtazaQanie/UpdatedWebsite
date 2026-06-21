@@ -470,6 +470,41 @@ if (writingsPage) {
 
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+const pageLoader = document.querySelector(".page-loader");
+const minLoaderTime = 600;
+const loaderStart = performance.now();
+
+const hidePageLoader = () => {
+  if (!pageLoader) {
+    document.body.classList.add("is-loaded");
+    return;
+  }
+  const elapsed = performance.now() - loaderStart;
+  const wait = Math.max(0, minLoaderTime - elapsed);
+  setTimeout(() => {
+    pageLoader.classList.add("is-hidden");
+    document.body.classList.add("is-loaded");
+    setTimeout(() => {
+      pageLoader.remove();
+      document.querySelectorAll("video[autoplay]").forEach((video) => {
+        if (video.paused) {
+          const playAttempt = video.play();
+          if (playAttempt && typeof playAttempt.catch === "function") {
+            playAttempt.catch(() => {});
+          }
+        }
+      });
+    }, 750);
+  }, wait);
+};
+
+if (document.readyState === "complete") {
+  hidePageLoader();
+} else {
+  window.addEventListener("load", hidePageLoader);
+  setTimeout(hidePageLoader, 6000);
+}
+
 const revealSelectors = [
   ".home-content > *",
   ".home-portrait-panel",

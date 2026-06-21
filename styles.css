@@ -7351,10 +7351,52 @@ html {
   scroll-behavior: smooth;
 }
 
-main,
-.home-main,
-.una-page > *:not(.nav):not(.home-header):not(.cookie-banner):not(.theme-toggle):not(.menu-toggle),
-.article-page > *:not(.nav):not(.home-header):not(.cookie-banner):not(.theme-toggle):not(.menu-toggle) {
+.page-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--page-bg);
+  opacity: 1;
+  pointer-events: all;
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.page-loader.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.page-loader-text {
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.55;
+  animation: loader-pulse 1.4s ease-in-out infinite;
+}
+
+@keyframes loader-pulse {
+  0%, 100% { opacity: 0.25; }
+  50%      { opacity: 0.85; }
+}
+
+html.site-dark-pending .page-loader,
+body.site-dark .page-loader {
+  background: #111113;
+}
+
+body.site-dark .page-loader-text {
+  color: rgba(231, 228, 222, 0.85);
+}
+
+body.is-loaded main,
+body.is-loaded .home-main,
+body.is-loaded.una-page > *:not(.nav):not(.home-header):not(.cookie-banner):not(.theme-toggle):not(.menu-toggle):not(.page-loader):not(.connect-header),
+body.is-loaded.article-page > *:not(.nav):not(.home-header):not(.cookie-banner):not(.theme-toggle):not(.menu-toggle):not(.page-loader) {
   animation: page-enter 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
@@ -7382,6 +7424,14 @@ main,
   transform: translateY(0);
 }
 
+.connect-hero.reveal {
+  transform: translate(-50%, calc(-37% + 28px));
+}
+
+.connect-hero.reveal.is-visible {
+  transform: translate(-50%, -37%);
+}
+
 .reveal[data-reveal-delay="1"] { transition-delay: 0.08s; }
 .reveal[data-reveal-delay="2"] { transition-delay: 0.16s; }
 .reveal[data-reveal-delay="3"] { transition-delay: 0.24s; }
@@ -7395,8 +7445,37 @@ body.is-leaving {
               transform 0.45s cubic-bezier(0.4, 0, 1, 1);
 }
 
+.una-page .nav,
+.connect-page .nav,
+.writings-page .nav {
+  background: rgba(18, 18, 20, 0.34);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.14);
+  backdrop-filter: blur(18px) saturate(1.35);
+  -webkit-backdrop-filter: blur(18px) saturate(1.35);
+  color: rgba(255, 255, 255, 0.76);
+  padding: 16px 31px;
+}
+
+.una-page .nav a:hover,
+.una-page .nav a[aria-current="page"],
+.connect-page .nav a:hover,
+.connect-page .nav a[aria-current="page"],
+.writings-page .nav a:hover,
+.writings-page .nav a[aria-current="page"] {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.una-page.site-dark .nav,
+.connect-page.site-dark .nav,
+.writings-page.site-dark .nav {
+  background: rgba(18, 18, 20, 0.55);
+  color: rgba(245, 242, 235, 0.78);
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
+  .page-loader,
+  .page-loader-text,
   main,
   .home-main,
   .una-page > *,
