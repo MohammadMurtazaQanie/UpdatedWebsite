@@ -7437,10 +7437,22 @@ body.is-leaving {
 }
 
 .una-page .nav,
-.una-page .nav.is-scrolled,
 .connect-page .nav,
+.writings-page .nav {
+  top: 28px;
+  left: 50%;
+  transform: translateX(145px);
+  padding: 13px 0;
+  background: rgba(18, 18, 20, 0);
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0);
+  backdrop-filter: blur(0) saturate(1);
+  -webkit-backdrop-filter: blur(0) saturate(1);
+  color: rgba(34, 34, 38, 0.7);
+  border-radius: 24px;
+}
+
+.una-page .nav.is-scrolled,
 .connect-page .nav.is-scrolled,
-.writings-page .nav,
 .writings-page .nav.is-scrolled {
   top: 28px;
   left: 50%;
@@ -7453,7 +7465,6 @@ body.is-leaving {
   backdrop-filter: blur(18px) saturate(1.35);
   -webkit-backdrop-filter: blur(18px) saturate(1.35);
   color: rgba(255, 255, 255, 0.76);
-  border-radius: 24px;
 }
 
 .una-page .nav a:hover,
@@ -7462,14 +7473,29 @@ body.is-leaving {
 .connect-page .nav a[aria-current="page"],
 .writings-page .nav a:hover,
 .writings-page .nav a[aria-current="page"] {
+  color: rgba(18, 18, 20, 0.95);
+}
+
+.una-page .nav.is-scrolled a:hover,
+.una-page .nav.is-scrolled a[aria-current="page"],
+.connect-page .nav.is-scrolled a:hover,
+.connect-page .nav.is-scrolled a[aria-current="page"],
+.writings-page .nav.is-scrolled a:hover,
+.writings-page .nav.is-scrolled a[aria-current="page"] {
   color: rgba(255, 255, 255, 0.95);
 }
 
 .una-page.site-dark .nav,
 .connect-page.site-dark .nav,
 .writings-page.site-dark .nav {
+  color: rgba(245, 242, 235, 0.72);
+}
+
+.una-page.site-dark .nav.is-scrolled,
+.connect-page.site-dark .nav.is-scrolled,
+.writings-page.site-dark .nav.is-scrolled {
   background: rgba(18, 18, 20, 0.55);
-  color: rgba(245, 242, 235, 0.78);
+  color: rgba(245, 242, 235, 0.82);
 }
 
 @media (prefers-reduced-motion: reduce) {
